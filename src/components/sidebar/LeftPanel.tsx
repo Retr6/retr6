@@ -1,63 +1,101 @@
 import { Link, useLocation } from "react-router-dom";
-import phoneMockup from "@/assets/phone-mockup.png";
+import logo from "@/assets/logo.png";
 
 const navItems = [
-  { label: "home", path: "/" },
-  { label: "about", path: "/about" },
-  { label: "work", path: "/work" },
-  { label: "contact", path: "/contact" },
+  { label: "Home", path: "/" },
+  { label: "Work", path: "/work" },
+  { label: "About Me", path: "/about" },
+  { label: "Contact", path: "/contact" },
 ];
 
 const LeftPanel = () => {
   const location = useLocation();
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-[50vw] flex flex-col justify-between p-10 lg:p-14 overflow-hidden">
-      {/* Top: Nav */}
+    <aside className="fixed left-4 top-5 bottom-5 w-[32vw] p-[5px] overflow-hidden bg-[#1F1F1F] rounded-2xl border border-[#FFFFFF1A]">
+      <div className="rounded-xl h-full flex flex-col justify-between p-4 bg-[#1A1A1A]">
+
+      
+      {/* Top: Profile + Headline */}
+      <div className="max-w-xl space-y-7">
+        {/* Profile row */}
+        <div className="flex items-center gap-2">
+          <div className="h-12 w-10 rounded-full bg-[#111111] flex items-center justify-center overflow-hidden">
+            <img
+              src={logo}
+              alt="Olufemi Kolade logo"
+              className="h-10 w-10 object-contain"
+            />
+          </div>
+          <div>
+            <p className="text-body font-medium text-foreground">Olufemi Kolade</p>
+          </div>
+        </div>
+
+        {/* Headline + tags */}
+        <div className="space-y-2">
+          <h1 className="text-main-header leading-tight tracking-tight text-foreground">
+            Multidisciplinary Designer
+          </h1>
+          <p className="text-sm text-white/70">
+            Product <span className="mx-1">•</span> Web <span className="mx-1">•</span> Brand
+          </p>
+        </div>
+
+        {/* Body copy */}
+        <p className="text-body text-white/70 max-w-[360px]">
+          I&apos;m Femi, an ambitious designer. I help businesses build products, brands, and websites that
+          attract customers, build trust, and drive growth.
+        </p>
+
+        {/* CTAs */}
+        <div className="flex flex-wrap items-center gap-4">
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#26282C] px-3 py-3 text-sm font-medium text-white shadow-[0_-2px_0_0_#393C42] transition-all duration-300 hover:opacity-90"
+          >
+            Let&apos;s Talk
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 16 16"
+              className="h-4 w-4"
+            >
+              <path
+                d="M6 4h6v6M6 10l6-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Link>
+          <Link
+            to="/work"
+            className="inline-flex items-center gap-2 px-2 py-3 text-sm font-medium text-foreground/90 hover:bg-muted transition-colors duration-300"
+          >
+            See My Work
+          </Link>
+        </div>
+      </div>
+
+      {/* Bottom: Nav */}
       <nav className="flex gap-6 text-body">
         {navItems.map((item) => (
           <Link
             key={item.path}
             to={item.path}
-            className={`lowercase tracking-wide transition-colors duration-200 ${
+            className={`tracking-wide transition-colors duration-200 ${
               location.pathname === item.path
-                ? "text-foreground"
-                : "text-muted-foreground hover:text-foreground"
+                ? "text-white/90"
+                : "text-white/60 hover:text-white/90"
             }`}
           >
             {item.label}
           </Link>
         ))}
       </nav>
-
-      {/* Middle: Headline + CTA */}
-      <div className="max-w-md space-y-8">
-        <h1 className="text-main-header lowercase leading-tight tracking-tight text-foreground">
-          i build products, brands &amp; experiences that attract customers, build trust, and drive growth.
-        </h1>
-        <p className="text-body text-muted-foreground">
-          product designer & developer focused on crafting digital experiences that matter.
-        </p>
-        <Link
-          to="/contact"
-          className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-body font-medium text-primary-foreground transition-all duration-300 hover:opacity-90"
-        >
-          let's talk
-        </Link>
       </div>
-
-      {/* Bottom: Phone mockup */}
-      <div className="absolute bottom-0 right-0 w-[55%] max-w-[320px] pointer-events-none select-none">
-        <img
-          src={phoneMockup}
-          alt="Fintech app mockup showcasing product design capability"
-          className="w-full h-auto object-contain drop-shadow-2xl"
-          loading="lazy"
-        />
-      </div>
-
-      {/* Subtle gradient overlay at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
     </aside>
   );
 };

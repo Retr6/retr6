@@ -1,7 +1,12 @@
+import { CopyIcon } from "lucide-react";
 import { useState } from "react";
+import linkedinIcon from "@/assets/icons/linkedin.png";
+import twitterIcon from "@/assets/icons/twitter.png";
+import layersIcon from "@/assets/icons/layers.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const emailAddress = "hey@femi.design";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -13,71 +18,68 @@ const Contact = () => {
     alert("Message sent! (placeholder)");
   };
 
-  return (
-    <section className="flex flex-col justify-center min-h-screen p-10 lg:p-14">
-      <div className="space-y-10 max-w-md animate-fade-in">
-        <p className="text-sm-header text-muted-foreground uppercase tracking-widest">contact</p>
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(emailAddress);
+    } catch (error) {
+      console.error("Failed to copy email", error);
+    }
+  };
 
-        <h2 className="text-main-header lowercase text-foreground">
-          let's create something great together.
+  return (
+    <section className="py-4 px-6">
+      <div className="space-y-6 w-full animate-fade-in">
+
+        <h2 className="text-[22px] font-medium text-white">
+          Contact Me
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="space-y-2">
-            <label htmlFor="name" className="text-body text-muted-foreground lowercase">
-              name
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full bg-secondary border border-border rounded-lg px-4 py-3 text-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary transition-all"
-              placeholder="your name"
-            />
-          </div>
+        <p className="text-body text-white/70 max-w-xl tracking-tight leading-relaxed">
+          Feel free to reach out if you’d like to collaborate — or just chat about design, gym, crypto, startups, or even astronomy!
+        </p>
 
-          <div className="space-y-2">
-            <label htmlFor="email" className="text-body text-muted-foreground lowercase">
-              email
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full bg-secondary border border-border rounded-lg px-4 py-3 text-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary transition-all"
-              placeholder="you@email.com"
-            />
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="message" className="text-body text-muted-foreground lowercase">
-              message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows={5}
-              value={formData.message}
-              onChange={handleChange}
-              className="w-full bg-secondary border border-border rounded-lg px-4 py-3 text-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary transition-all resize-none"
-              placeholder="tell me about your project..."
-            />
-          </div>
-
+        {/* Email + copy */}
+        <div className="flex flex-wrap items-center gap-4">
+          <span className="text-lg text-white">{emailAddress}</span>
           <button
-            type="submit"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-body font-medium text-primary-foreground transition-all duration-300 hover:opacity-90"
+            type="button"
+            onClick={handleCopyEmail}
+            className="inline-flex items-center gap-1 rounded-full bg-[#26282C] px-5 py-2 text-xs font-medium text-white shadow-[0_-1px_0_0_#393C42] transition-all duration-300 hover:opacity-90"
           >
-            send message
+            <CopyIcon className="h-4 w-4 mr-1" />
+            Copy
           </button>
-        </form>
+        </div>
+
+        {/* Social icons */}
+        <div className="!mt-12">
+        <h3 className="text-md font-medium text-white/70 mb-2">Social Media</h3>
+        <div className="flex items-center gap-5">
+          <a
+            href="#"
+            aria-label="LinkedIn"
+            className="lex items-center justify-center rounded-full hover:scale-110 transition-all duration-300"
+          >
+            <img src={linkedinIcon} alt="LinkedIn" className="h-5 w-5" />
+          </a>
+          <a
+            href="#"
+            aria-label="X"
+            className="flex items-center justify-center rounded-full hover:scale-110 transition-all duration-300"
+          >
+            <img src={twitterIcon} alt="X" className="h-5 w-5" />
+          </a>
+          <a
+            href="#"
+            aria-label="Instagram"
+            className="flex items-center justify-center rounded-full hover:scale-110 transition-all duration-300"
+          >
+            <img src={layersIcon} alt="Instagram" className="h-5 w-5" />
+          </a>
+        </div>
+        </div>
+
+
       </div>
     </section>
   );

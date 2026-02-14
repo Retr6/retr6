@@ -19,7 +19,7 @@ export default {
       fontSize: {
         body: ["15px", { lineHeight: "1.7" }],
         "sm-header": ["17px", { lineHeight: "1.5", fontWeight: "500" }],
-        "main-header": ["32px", { lineHeight: "1.25", fontWeight: "600" }],
+        "main-header": ["28px", { lineHeight: "1.25", fontWeight: "600" }],
         "main-header-sm": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
       },
       colors: {

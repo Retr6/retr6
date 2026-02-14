@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <section className="flex flex-col justify-center min-h-screen p-10 lg:p-14">
-      <div className="space-y-10 max-w-lg animate-fade-in">
+      <div className="space-y-10 w-full animate-fade-in">
         <p className="text-sm-header text-muted-foreground uppercase tracking-widest">about</p>
 
         <h2 className="text-main-header lowercase text-foreground">

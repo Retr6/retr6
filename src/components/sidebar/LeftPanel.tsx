@@ -12,15 +12,15 @@ const LeftPanel = () => {
   const location = useLocation();
 
   return (
-    <aside className="fixed left-4 top-5 bottom-5 w-[32vw] p-[5px] overflow-hidden bg-[#1F1F1F] rounded-2xl border border-[#FFFFFF1A]">
-      <div className="rounded-xl h-full flex flex-col justify-between p-4 bg-[#1A1A1A]">
+    <aside className="fixed left-4 top-5 bottom-5 w-[32vw] p-[5px] overflow-hidden bg-[#18191B] rounded-2xl border border-[#FFFFFF1A] animate-fade-in-up">
+      <div className="rounded-xl h-full flex flex-col justify-between p-4 bg-[#131416]">
 
       
       {/* Top: Profile + Headline */}
       <div className="max-w-xl space-y-7">
         {/* Profile row */}
         <div className="flex items-center gap-2">
-          <div className="h-12 w-10 rounded-full bg-[#111111] flex items-center justify-center overflow-hidden">
+          <div className="h-12 w-10 rounded-full bg-[#131416] flex items-center justify-center overflow-hidden">
             <img
               src={logo}
               alt="Olufemi Kolade logo"
@@ -37,9 +37,7 @@ const LeftPanel = () => {
           <h1 className="text-main-header leading-tight tracking-tight text-foreground">
             Multidisciplinary Designer
           </h1>
-          <p className="text-sm text-white/70">
-            Product <span className="mx-1">•</span> Web <span className="mx-1">•</span> Brand
-          </p>
+          
         </div>
 
         {/* Body copy */}
@@ -52,7 +50,7 @@ const LeftPanel = () => {
         <div className="flex flex-wrap items-center gap-4">
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#26282C] px-3 py-3 text-sm font-medium text-white shadow-[0_-2px_0_0_#393C42] transition-all duration-300 hover:opacity-90"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#26282C] px-3 py-3 text-sm font-medium text-white shadow-[0_-1px_0_0_#393C42] transition-all duration-300 hover:opacity-90"
           >
             Let&apos;s Talk
             <svg
@@ -72,7 +70,7 @@ const LeftPanel = () => {
           </Link>
           <Link
             to="/work"
-            className="inline-flex items-center gap-2 px-2 py-3 text-sm font-medium text-foreground/90 hover:bg-muted transition-colors duration-300"
+            className="inline-flex items-center gap-2 px-2 py-3 text-sm font-medium text-foreground/90 hover:underline hover:text-white"
           >
             See My Work
           </Link>

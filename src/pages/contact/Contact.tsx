@@ -1,4 +1,4 @@
-import { CopyIcon } from "lucide-react";
+import { CopyIcon, CheckIcon } from "lucide-react";
 import { useState } from "react";
 import linkedinIcon from "@/assets/icons/linkedin.png";
 import twitterIcon from "@/assets/icons/twitter.png";
@@ -6,6 +6,7 @@ import layersIcon from "@/assets/icons/layers.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [copied, setCopied] = useState(false);
   const emailAddress = "hey@femi.design";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -21,6 +22,10 @@ const Contact = () => {
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText(emailAddress);
+      setCopied(true);
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
     } catch (error) {
       console.error("Failed to copy email", error);
     }
@@ -40,14 +45,28 @@ const Contact = () => {
 
         {/* Email + copy */}
         <div className="flex flex-wrap items-center gap-4">
-          <span className="text-lg text-white">{emailAddress}</span>
+          <a
+            href={`mailto:${emailAddress}`}
+            className="text-lg text-white hover:text-white/80 transition-colors cursor-pointer"
+          >
+            {emailAddress}
+          </a>
           <button
             type="button"
             onClick={handleCopyEmail}
             className="inline-flex items-center gap-1 rounded-full bg-[#26282C] px-5 py-2 text-xs font-medium text-white shadow-[0_-1px_0_0_#393C42] transition-all duration-300 hover:opacity-90"
           >
-            <CopyIcon className="h-4 w-4 mr-1" />
-            Copy
+            {copied ? (
+              <>
+                <CheckIcon className="h-4 w-4 mr-1" />
+                Copied
+              </>
+            ) : (
+              <>
+                <CopyIcon className="h-4 w-4 mr-1" />
+                Copy
+              </>
+            )}
           </button>
         </div>
 

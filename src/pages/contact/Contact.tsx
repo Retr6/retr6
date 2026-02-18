@@ -3,6 +3,7 @@ import { useState } from "react";
 import linkedinIcon from "@/assets/icons/linkedin.png";
 import twitterIcon from "@/assets/icons/twitter.png";
 import layersIcon from "@/assets/icons/layers.png";
+import instagramIcon from "@/assets/icons/instagram.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -32,7 +33,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-4 px-6">
+    <section className="lg:py-4 py-12 lg:px-6 px-4">
       <div className="space-y-6 w-full animate-fade-in">
 
         <h2 className="text-[22px] font-medium text-white">
@@ -75,25 +76,40 @@ const Contact = () => {
         <h3 className="text-md font-medium text-white/70 mb-2">Social Media</h3>
         <div className="flex items-center gap-5">
           <a
-            href="#"
+            href="https://www.linkedin.com/in/olufemi-kolade-johnson"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="lex items-center justify-center rounded-full hover:scale-110 transition-all duration-300"
+            className="flex items-center justify-center rounded-full hover:scale-110 transition-all duration-300"
           >
-            <img src={linkedinIcon} alt="LinkedIn" className="h-5 w-5" />
+            <img src={linkedinIcon} alt="LinkedIn" className="h-6 w-6" />
           </a>
           <a
-            href="#"
+            href="https://x.com/0x_femi"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="X"
             className="flex items-center justify-center rounded-full hover:scale-110 transition-all duration-300"
           >
-            <img src={twitterIcon} alt="X" className="h-5 w-5" />
+            <img src={twitterIcon} alt="X" className="h-6 w-6" />
           </a>
           <a
-            href="#"
+            href="https://layers.to/femi6"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Layers"
+            className="flex items-center justify-center rounded-full hover:scale-110 transition-all duration-300"
+          >
+            <img src={layersIcon} alt="Layers" className="h-6 w-6" />
+          </a>
+          <a
+            href="https://www.instagram.com/femi6.design"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Instagram"
             className="flex items-center justify-center rounded-full hover:scale-110 transition-all duration-300"
           >
-            <img src={layersIcon} alt="Instagram" className="h-5 w-5" />
+            <img src={instagramIcon} alt="Instagram" className="h-6 w-6" />
           </a>
         </div>
         </div>

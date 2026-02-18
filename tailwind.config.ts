@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
+        neue: ["NeueMontreal", "sans-serif"],
       },
       fontSize: {
         body: ["15px", { lineHeight: "1.7" }],

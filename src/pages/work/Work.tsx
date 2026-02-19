@@ -70,11 +70,11 @@ const Work = () => {
                 className="group block pb-2 transition-colors duration-300 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-full h-[500px] rounded-2xl overflow-hidden">
+                <div className="w-full rounded-2xl overflow-hidden">
                   {project.type === 'video' ? (
-                    <video src={project.thumbnail} autoPlay muted loop className="w-full h-full object-cover" />
+                    <video src={project.thumbnail} autoPlay muted loop className="w-full" />
                   ) : (
-                    <img src={project.thumbnail} alt={project.title} className="w-full h-full object-cover" />
+                    <img src={project.thumbnail} alt={project.title} className="w-full" />
                   )}
                 </div>
                 <div className="mt-4">

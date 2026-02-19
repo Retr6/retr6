@@ -17,8 +17,8 @@ const MobileNavbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className={`lg:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-300 overflow-hidden ${
-      open ? 'h-auto rounded-b-2xl bg-[#131416]' : 'h-[57px]'
+    <nav className={`lg:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-300 overflow-hidden bg-[#131416] ${
+      open ? 'h-auto rounded-b-2xl bg-[#131416]' : 'h-[65px]'
     }`}>
       <div className="flex items-center justify-between px-4 py-3">
         {/* Logo and Name */}

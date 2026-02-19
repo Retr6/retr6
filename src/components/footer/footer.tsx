@@ -11,7 +11,7 @@ const Footer = () => {
                 <p className="font-medium text-white/70">Thanks for reading</p>
                 <p className="lg:text-[3rem] text-[2rem] mt-6 lg:max-w-[700px] max-w-[360px] mx-auto tracking-tight font-neue font-medium" style={{ lineHeight: '1.2' }}>I'd love to help you meet your business goals</p>
                 <div className="flex flex-wrap items-center gap-4 justify-center mt-5">
-                    <Link to="/contact" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium border border-[#FFFFFF33] text-white transition-all duration-300 hover:bg-[]">Book a free call</Link>
+                    <a href="https://calendly.com/femikolade6/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium border border-[#FFFFFF33] text-white transition-all duration-300 hover:bg-[]">Book a free call</a>
                     <Link to="/work" className="inline-flex items-center gap-2 px-2 py-3 text-sm font-medium text-foreground/60 hover:underline hover:text-white">See more work</Link>
                 </div>
             </div>

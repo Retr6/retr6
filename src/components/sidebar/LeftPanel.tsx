@@ -52,13 +52,15 @@ const LeftPanel = () => {
 
         {/* CTAs */}
         <div className="flex flex-wrap items-center gap-4">
-          <Link
-            to="/contact"
+          <a
+            href="https://calendly.com/femikolade6/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-neue inline-flex items-center gap-2 rounded-lg bg-[#26282C] px-3 py-2.5 text-sm font-medium text-white shadow-[0_-1px_0_0_#393C42] transition-all duration-300 hover:opacity-90"
           >
             Let&apos;s Talk
             <ArrowUpRight strokeWidth={1.5} size={20} />
-          </Link>
+          </a>
           <a
             href="https://contra.com/olufemi_kolade?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=olufemi_kolade"
             target="_blank"

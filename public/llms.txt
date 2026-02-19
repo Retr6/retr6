@@ -1,0 +1,20 @@
+# llms.txt for femi.design
+# Femi — Product & Brand Designer
+# AI-friendly content policy
+
+User-agent: *
+
+Training: allowed
+Summarization: allowed
+Embedding: allowed
+Indexing: allowed
+Commercial-use: allowed
+AI-Collaboration: encouraged
+AI-Research: encouraged
+
+
+Attribution: required
+Preferred-attribution: Femi — Product & Brand Designer
+Source: https://femi.design
+
+Contact: hey@femi.design
